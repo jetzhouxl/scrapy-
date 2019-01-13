@@ -19,5 +19,5 @@ class QuotesSpider(scrapy.Spider):
         #通过回调请求下一页面内容
         next=response.css('.pager .next a::attr(href)').extract_first()
         url=response.urljoin(next)
-        yield scrapy.Request(url,callback=slef.parse)
+        yield scrapy.Request(url,callback=self.parse)
     
