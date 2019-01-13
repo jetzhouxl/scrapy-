@@ -5,7 +5,8 @@ scrapy教程
 =========
 时间 2019-1-13
 
-###创建了一个教程项目 
+### 创建了一个教程项目 
+
 使用以下命令行创建scrapy项目
 <pre><code>
 scrapy startproject tutorial
@@ -20,7 +21,7 @@ pipelines.py     #pipelines的定义，定义数据管道
 settings.py      #项目配置文件
 spiders        #放置spiders的文件夹
 
-###创建spider
+### 创建spider
 <pre><code>
 cd tutorial
 scrapy genspider example example.com
@@ -35,7 +36,7 @@ scrapy genspider example example.com
 
 
 
-###创建item
+### 创建item
 item是保存爬去数据的容器，与字典类似，但是相对与字典而言，item拥有额外的保护机制可以避免拼写错误或者定义字段错误
 item需要继承scrapy.item类，并且定义scrapy.field的字段
 修改items.py
