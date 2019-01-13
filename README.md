@@ -49,3 +49,10 @@ item需要继承scrapy.item类，并且定义scrapy.field的字段
 上文定义的item，我们将其当作字典使用，不过在声明的时候需要实例化
 
 <a href='https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/'>python yield解析</a>
+
+#### 后续request，爬取下一页内容
+分析网页内容我们知道next 按钮包含了一个链接这个链接是指向下一页的，所以我们通过scrapy.Request来构造请求，我们需要传入两个参数---url和callback：
+<li>url:请求链接
+<li>callback：回调函数，当指定了该回调函数的请求完成之后，获取到请求，引擎会将该响应作为参数传递给这个回调函数。回调函数进行解析或生成下一个请求，回调函数如上文的parse()所示。
+
+

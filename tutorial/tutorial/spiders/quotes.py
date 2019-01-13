@@ -16,3 +16,8 @@ class QuotesSpider(scrapy.Spider):
             item['author']=quote.css('.author::text').extract_first()
             item['tags']=quote.css('.tag .tag::text').extract()
             yield item
+        #通过回调请求下一页面内容
+        next=response.css('.pager .next a::attr(href)').extract_first()
+        url=response.urljoin(next)
+        yield scrapy.Request(url,callback=slef.parse)
+    
