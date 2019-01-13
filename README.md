@@ -33,9 +33,6 @@ scrapy genspider example example.com
 <li>start_urls,它包含了spider在启动时爬取的url列表，初始请求是由它来定义的</li>
 <li>parse,它是spider的方法。默认情况下，被调用时start_urls里面的链接构成的请求完成下载执行后，返回的响应就会作为唯一的参数传递给这个函数。该方法负责解析返回相应，提取数据或者进一步生成要处理的请求。
 
-
-
-
 ### 创建item
 item是保存爬去数据的容器，与字典类似，但是相对与字典而言，item拥有额外的保护机制可以避免拼写错误或者定义字段错误
 item需要继承scrapy.item类，并且定义scrapy.field的字段
@@ -55,4 +52,30 @@ item需要继承scrapy.item类，并且定义scrapy.field的字段
 <li>url:请求链接
 <li>callback：回调函数，当指定了该回调函数的请求完成之后，获取到请求，引擎会将该响应作为参数传递给这个回调函数。回调函数进行解析或生成下一个请求，回调函数如上文的parse()所示。
 
+#### 运行
+接下来进入项目目录，运行如下命令
+<pre><code>
+scrapy crawl quotes
+</code></pre>
+就可以看到scrapy的运行结果
 
+#### 保存到文件
+
+现在我们只能在控制台上看我们的结果，但是如果我们想将结果保存到文件应该怎么办啊？
+要完成这个任务其实很简单，我们甚至都不用添加任何额外的代码，Scrapy提供了Feed Exports可以轻松将抓取结果输出。例如我们想将上面的结果保存成JSON文件，可以执行如下命令：
+<pre><code>
+scrapy crawl quotes -o quotes.json
+</pre></code>
+另外我们还可以为每一个item输出一行JSON，输出后缀为jl，为jsonline的缩写，命令行为：
+<pre><code>
+scrapy crawl quotes -o quotes.jl
+</pre></code>
+
+其他的文件格式
+<pre><code>
+scrapy crawl quotes -o quotes.csv
+scrapy crawl quotes -o quotes.xml
+scrapy crawl quotes -o quotes.pickle
+scrapy crawl quotes -o quotes.marshal
+scrapy crawl quotes -o ftp://user:pass@ftp.example.com/path/to/quotes.csv
+</pre></code>
