@@ -45,3 +45,7 @@ item需要继承scrapy.item类，并且定义scrapy.field的字段
 修改parse方法，其参数response是starturls里面的链接爬取的结果。所以在parse方法中我们对response进行解析，比如浏览请求结果的网页源代码，或者进一步分析源代码内容，或者找出结果中的链接而得到下一个请求。
 此处使用了css选择器来解析response。
 
+#### 使用item
+上文定义的item，我们将其当作字典使用，不过在声明的时候需要实例化
+
+<a href='https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/'>python yield解析</a>
