@@ -40,3 +40,8 @@ scrapy genspider example example.com
 item是保存爬去数据的容器，与字典类似，但是相对与字典而言，item拥有额外的保护机制可以避免拼写错误或者定义字段错误
 item需要继承scrapy.item类，并且定义scrapy.field的字段
 修改items.py
+
+### 解析Response
+修改parse方法，其参数response是starturls里面的链接爬取的结果。所以在parse方法中我们对response进行解析，比如浏览请求结果的网页源代码，或者进一步分析源代码内容，或者找出结果中的链接而得到下一个请求。
+此处使用了css选择器来解析response。
+
