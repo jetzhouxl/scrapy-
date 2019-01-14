@@ -11,6 +11,9 @@
 
 BOT_NAME = 'zimukuspider'
 
+#file pipeline
+FILES_STORE = './dir'
+
 SPIDER_MODULES = ['zimukuspider.spiders']
 NEWSPIDER_MODULE = 'zimukuspider.spiders'
 
@@ -19,7 +22,7 @@ NEWSPIDER_MODULE = 'zimukuspider.spiders'
 #USER_AGENT = 'zimukuspider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -64,9 +67,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'zimukuspider.pipelines.ZimukuspiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'zimukuspider.pipelines.ZimukuFilePipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
