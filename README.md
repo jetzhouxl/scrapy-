@@ -79,3 +79,10 @@ scrapy crawl quotes -o quotes.pickle
 scrapy crawl quotes -o quotes.marshal
 scrapy crawl quotes -o ftp://user:pass@ftp.example.com/path/to/quotes.csv
 </pre></code>
+
+使用item pipeline
+如果想进行更加复杂的操作，如将结果保存到数据库，或者筛选某些有用的item，则我们可以定义item pileline来实现。
+
+item pileline为项目管道。当item生成后，它会自动被送到item pileline进行处理，我们常用item pileline来坐如下操作：
+<li>清理html数据</li>
+
