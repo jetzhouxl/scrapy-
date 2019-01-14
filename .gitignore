@@ -1,0 +1,14 @@
+images360/images360/spiders/__pycache__/images.cpython-36.pyc
+.DS_Store
+.vscode/settings.json
+images360/.DS_Store
+images360/scrapy.cfg
+images360/images360/.DS_Store
+images360/images360/__pycache__/__init__.cpython-36.pyc
+images360/images360/__pycache__/items.cpython-36.pyc
+images360/images360/__pycache__/pipelines.cpython-36.pyc
+images360/images360/__pycache__/settings.cpython-36.pyc
+images360/images360/spiders/.DS_Store
+images360/images360/spiders/__pycache__/__init__.cpython-36.pyc
+tutorial/tutorial/__pycache__/items.cpython-36.pyc
+tutorial/tutorial/spiders/__pycache__/quotes.cpython-36.pyc
